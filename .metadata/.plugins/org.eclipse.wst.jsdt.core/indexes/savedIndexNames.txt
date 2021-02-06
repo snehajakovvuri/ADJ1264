@@ -1,0 +1,10 @@
+INDEX VERSION 1.3+C:\Users\sneha\Documents\snehaja\Snehaja1264\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4188716606.index
+432327593.index
+4269598382.index
+1858337599.index
+3627062903.index
+275673533.index
+83719746.index
+2521361422.index
+3361746987.index

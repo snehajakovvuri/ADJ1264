@@ -1,0 +1,43 @@
+package programs;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class Program5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Connection con = null;
+		String URL = "jdbc:mysql://localhost:3306/adj";
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection(URL,"root","root");
+			System.out.println("Connection Established");
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter Student Id:");
+			int sid = sc.nextInt();
+			System.out.println("Enter the branch You want to change");
+			String branch = sc.next();
+			String query = "UPDATE STUDENTS s1et branch=? where sid=?";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1,branch);
+			st.setInt(2, sid);
+			int result = st.executeUpdate();
+			if(result > 0) {
+				System.out.println(result+" rows Updated!!");
+			}
+			else {
+				System.out.println("No Record Updated!!");
+				
+		}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}
+
